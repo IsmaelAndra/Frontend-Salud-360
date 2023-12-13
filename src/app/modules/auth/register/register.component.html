@@ -1,0 +1,292 @@
+<body class="font-primary">
+  <section class="min-h-screen h-screen flex bg-no-repeat bg-gradient-to-r from-cyan-300 to-sky-600">
+    <div class="lg:flex w-2/2 hidden  bg-no-repeat bg-cover relative items-center">
+      <div class="absolute bg-black opacity-0 inset-0 z-0"></div>
+      <div class="flex items-center justify-center">
+        <img class="w-screen h-screen ml-10" src="./assets/img/register2.png" alt="">
+      </div>
+
+    </div>
+    <div
+      class="ml-16 w-full flex items-center justify-center text-center md:px-8 mx-32 my-4 z-0 opacity-80 bg-white shadow-2xl rounded-3xl">
+      <div class="absolute lg:hidden z-10 inset-0 bg-gray-800 bg-no-repeat bg-cover items-center"
+        style="background-image: url('./assets/login.png');">
+        <div class="absolute bg-black  inset-0 z-0"></div>
+      </div>
+      <div class="w-full py-6 z-20">
+        <div class="flex justify-center pb-5">
+          <img src="https://mibluemedical.com/wp-content/uploads/2021/02/cropped-Bluemedical-icon-2.png"
+            class="w-14 h-12" alt="">
+          <p class="text-5xl pl-2 text-sky-500">Salud360</p>
+        </div>
+        <form class="sm:w-3/3 w-full px-36 lg:px-0 mx-auto" [formGroup]="registerForm" [formGroup]="registerForm">
+          <div class="grid md:grid-cols-2 md:gap-6">
+
+            <div class="relative z-0 w-full mb-8 group">
+              <input type="text" id="name" id="name" formControlName="name_user"
+                class="block py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-sky-500 appearance-none focus:outline-none focus:ring-0 peer"
+                placeholder=" " required />
+              <label
+                class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre</label>
+
+              <div *ngIf="registerForm.get('name_user')?.hasError('required') && registerForm.get('name_user')?.touched"
+                class="absolute flex justify-end text-sm text-rose-600">
+                El campo es obligatorio
+              </div>
+              <div *ngIf="registerForm.get('name_user')?.hasError('pattern') && registerForm.get('name_user')?.touched"
+                class="absolute flex justify-end text-sm text-rose-600">
+                ¡El nombre solo acepta letras sin espacios!
+              </div>
+            </div>
+
+            <div class="relative z-0 w-full mb-8 group">
+              <input type="text" id="name" id="name" formControlName="lastname_user"
+                class="block py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-sky-500 appearance-none  focus:outline-none focus:ring-0 peer"
+                placeholder=" " required />
+              <label
+                class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Apellido</label>
+              <div
+                *ngIf="registerForm.get('lastname_user')?.hasError('required') && registerForm.get('lastname_user')?.touched"
+                class="absolute flex justify-end text-sm text-rose-600">
+                El campo es obligatorio
+              </div>
+              <div
+                *ngIf="registerForm.get('lastname_user')?.hasError('pattern') && registerForm.get('lastname_user')?.touched"
+                class="absolute flex justify-end text-sm text-rose-600">
+                ¡El apellido solo acepta letras sin espacios!
+              </div>
+            </div>
+
+          </div>
+
+          <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-8 group">
+              <input type="text" id="address_user" id="address_user" formControlName="address_user"
+                class="block py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-cyan-300 appearance-none  focus:outline-none focus:ring-0 peer"
+                placeholder=" " required />
+              <label
+                class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección</label>
+              <div
+                *ngIf="registerForm.get('address_user')?.hasError('required') && registerForm.get('address_user')?.touched"
+                class="absolute flex justify-end text-sm text-rose-600">
+                El campo es obligatorio
+              </div>
+            </div>
+
+            <div class="relative z-0 w-full mb-8 group">
+              <input type="number" id="address_user" id="address_user" formControlName="phone_user"
+                class="block py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-cyan-300 appearance-none  focus:outline-none focus:ring-0 peer"
+                placeholder=" " required />
+              <label
+                class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Número</label>
+              <div
+                *ngIf="registerForm.get('phone_user')?.hasError('required') && registerForm.get('phone_user')?.touched"
+                class="absolute flex justify-end text-sm text-rose-600">
+                El campo es obligatorio
+              </div>
+              <div
+                *ngIf="registerForm.get('phone_user')?.hasError('pattern') && registerForm.get('phone_user')?.touched"
+                class="absolute flex justify-end text-sm text-rose-600">
+                Ingrese un numero telefonico valido
+              </div>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-6 group">
+              <label
+                class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Género</label>
+              <svg class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 412 232">
+                <path
+                  d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
+                  fill="#648299" fill-rule="nonzero" />
+              </svg>
+              <select formControlName="gender_user" id="gender_user"
+                class="py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-sky-500 appearance-none  focus:outline-none focus:ring-0 peer">
+                <option value="" disabled>Seleccione su género</option>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+                <option value="no binario">No Binario</option>
+                <option value="otro">Prefiero No Decirlo</option>
+              </select>
+              <div
+                *ngIf="registerForm.get('gender_user')?.hasError('required') && registerForm.get('gender_user')?.touched"
+                class="absolute flex justify-end text-sm text-rose-600">
+                Por favor, selecciona un género
+              </div>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type="date" formControlName="date_of_birth_user"
+                class="block py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-sky-500 appearance-none  focus:outline-none focus:ring-0 peer"
+                placeholder=" " required />
+              <label
+                class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Fecha
+                de Nacimiento</label>
+              <div
+                *ngIf="registerForm.get('date_of_birth_user')?.hasError('menorDeEdad') && registerForm.get('date_of_birth_user')?.touched"
+                class="absolute flex justify-end text-sm text-rose-600">
+                Debes ser mayor de 18 años
+              </div>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="relative z-0 w-full mb-8 group ">
+            <input type="mail" formControlName="mail_user"
+              class="block peer py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-cyan-300 appearance-none  focus:outline-none focus:ring-0 peer"
+              placeholder=" " required />
+            <label
+              class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Correo
+              Electronico</label>
+            <div *ngIf="registerForm.get('mail_user')?.getError('email') && registerForm.get('mail_user')?.touched"
+              class="absolute flex justify-end text-sm text-rose-600">
+              Ingresa una dirección de correo electrónico válida
+            </div>
+            <div *ngIf="registerForm.get('mail_user')?.getError('required') && registerForm.get('mail_user')?.touched"
+              class="absolute flex justify-end text-sm text-rose-600">
+              El correo electronico es obligatorio
+            </div>
+          </div>
+          <div class="relative z-0 w-full mb-8 group">
+            <input type="text" id="name" id="name" formControlName="name_user"
+              class="block py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-sky-500 appearance-none focus:outline-none focus:ring-0 peer"
+              placeholder=" " required />
+            <label
+              class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre de Usuario</label>
+
+            <div *ngIf="registerForm.get('name_user')?.hasError('required') && registerForm.get('name_user')?.touched"
+              class="absolute flex justify-end text-sm text-rose-600">
+              El campo es obligatorio
+            </div>
+            <div *ngIf="registerForm.get('name_user')?.hasError('pattern') && registerForm.get('name_user')?.touched"
+              class="absolute flex justify-end text-sm text-rose-600">
+              ¡El nombre solo acepta letras sin espacios!
+            </div>
+          </div>
+        </div>
+          <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-2 group">
+              <input type="password" formControlName="password_user"
+                class="block py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-sky-500 appearance-none  focus:outline-none focus:ring-0 peer"
+                placeholder=" " required />
+              <label
+                class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Contraseña</label>
+              <div
+                *ngIf="registerForm.get('password_user')?.hasError('pattern') && registerForm.get('password_user')?.touched"
+                class="flex justify-end text-xs text-rose-600">
+                - Al menos 8 caracteres de longitud<br>
+                - Al menos 1 letra mayúscula <br>
+                - Al menos 1 número <br>
+              </div>
+              <div
+                *ngIf="registerForm.get('password_user')?.hasError('required') && registerForm.get('password_user')?.touched"
+                class="absolute flex justify-end text-sm text-rose-600">
+                Campo Requerido
+              </div>
+            </div>
+
+            <div class="relative z-0 w-full mb-8 group">
+              <input type="password" formControlName="password_validation_user"
+                class="block py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-sky-500 appearance-none  focus:outline-none focus:ring-0 peer"
+                placeholder=" " required />
+              <label
+                class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Repetir
+                Contraseña</label>
+              <div
+                *ngIf="registerForm.hasError('notSame') && (registerForm.get('password_user')?.touched || registerForm.get('password_validation_user')?.touched)"
+                class="absolute flex justify-end text-sm text-rose-600">
+                Las contraseñas no coinciden
+              </div>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center justify-center">
+              <label class="text-sm text-black">
+                Al hacer clic en Registrarte, aceptas los
+                <button (click)="openModal()"
+                  class="font-medium text-blue-600 dark:text-blue-500 hover:underline">términos y condiciones</button>
+                de
+                Salud360.
+              </label>
+            </div>
+            <div>
+              <button (click)="register()"
+                class="flex w-full rounded-full bg-gradient-to-tr from-cyan-300 to-sky-600 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75">
+                <span
+                  class="block w-full rounded-full bg-white text-black px-8 py-2 text-base font-medium hover:bg-transparent hover:text-white">
+                  Registrarte
+                </span>
+              </button>
+            </div>
+            <div class="flex items-center justify-center -mt-4">
+              <label class="text-sm text-black">
+                ¿Tienes una cuenta? <a [routerLink]="['/login']"
+                  class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Entrar</a>.
+              </label>
+            </div>
+          </div>
+          <div id="Politicas"
+            class="hidden bg-black bg-opacity-100 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-screen max-h-full">
+            <div class="relative w-full z-50 max-w-2xl max-h-full">
+              <form class="relative bg-white rounded-lg shadow">
+                <div class="flex items-start justify-between p-4 border-b rounded-t shadow-lg">
+                  <h3 class="text-xl text-sky-600"><i class="fa fa-plus mx-2" aria-hidden="true"></i>
+                    Términos y Condiciones de la Clínica de Medicina Salud 360
+                  </h3>
+                  <a class="p-1 hover:text-white hover:bg-sky-500 rounded-full focus:outline-none focus:ring"
+                    (click)="closeModal()">
+                    <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </a>
+                </div>
+                <p class="m-6 text-left">La clínica se compromete a proporcionar servicios médicos de calidad, incluyendo
+                  consultas, diagnósticos, tratamientos y cualquier otro servicio médico especificado. <br>
+                  <b>➢ Responsabilidad del Paciente:</b> <br>
+                  Los pacientes son responsables de proporcionar información precisa sobre su
+                  historial médico, seguir las indicaciones médicas y cumplir con los pagos en
+                  los plazos acordados. <br>
+                  <b>➢ Citas y Cancelaciones:</b><br>
+                  Los pacientes deben programar citas con anticipación. Se espera que
+                  notifiquen con suficiente antelación cualquier cancelación o cambio en la cita.<br>
+                  <b>➢ Pago de Servicios:</b><br>
+                  Los pacientes son responsables de pagar por los servicios médicos recibidos.
+                  Los detalles sobre tarifas y métodos de pago se especificarán en una lista de
+                  precios o en un acuerdo financiero separado.<br>
+                  <b>➢ Confidencialidad de la Información Médica:</b><br>
+                  La clínica se compromete a mantener la confidencialidad de la información
+                  médica de los pacientes de acuerdo con las leyes y regulaciones aplicables.<br>
+                  <b>➢ Política de Cancelación y Reembolso:</b><br>
+                  Se establecerán políticas claras sobre cancelaciones y reembolsos, detallando
+                  las circunstancias bajo las cuales se pueden aplicar cargos y los procesos para
+                  la devolución de pagos.<br>
+                  <b>➢ Seguridad y Privacidad:</b><br>
+                  La clínica implementará medidas de seguridad para proteger la información
+                  del paciente y garantizar un entorno seguro para la prestación de servicios
+                  médicos.<br>
+                  <b>➢ Cumplimiento Normativo:</b><br>
+                  La clínica cumplirá con todas las regulaciones y normativas locales
+                  relacionadas con la práctica médica, incluyendo licencias y certificaciones
+                  necesarias.<br>
+                  <b>➢ Derechos de Propiedad Intelectual:</b><br>
+                  Los pacientes respetarán los derechos de propiedad intelectual de la clínica,
+                  incluyendo el uso de material educativo y cualquier otro contenido
+                  proporcionado.<br>
+                  <b>➢ Resolución de Conflictos:</b><br>
+                  Cualquier conflicto entre la clínica y los pacientes se resolverá a través de
+                  negociaciones de buena fe. Si no se llega a un acuerdo, se buscará mediación o
+                  arbitraje según lo establecido por la ley.<br>
+                  <b>➢ Modificaciones a los Términos y Condiciones:</b><br>
+                  La clínica se reserva el derecho de realizar cambios en estos términos y
+                  condiciones. Los cambios serán comunicados a los pacientes con anticipación.<br>
+                  <b>➢ Terminación de Servicios:</b><br>
+                  La clínica se reserva el derecho de terminar la prestación de servicios a un
+                  paciente si hay un incumplimiento grave de estos términos y condiciones.</p>
+              </form>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>

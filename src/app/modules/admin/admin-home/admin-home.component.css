@@ -1,0 +1,225 @@
+*,::after,::before {
+  box-sizing: border-box
+}
+
+th {
+  text-align: inherit
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px
+}
+
+.col,.col-1,.col-10,.col-11,.col-12,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-auto,.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-auto,.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-auto,.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-auto,.col-xl,.col-xl-1,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-auto {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px
+}
+
+@media(min-width: 768px) {
+  .col-md {
+      flex-basis:0;
+      flex-grow: 1;
+      max-width: 100%
+  }
+  .col-md-4 {
+      flex: 0 0 33.3333333333%;
+      max-width: 33.3333333333%
+  }
+}
+
+@media(min-width: 992px) {
+  .col-lg-3 {
+      flex: 0 0 25%;
+      max-width: 25%
+  }
+  .col-lg-6 {
+      flex: 0 0 50%;
+      max-width: 50%
+  }
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529
+}
+
+.table td,.table th {
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid rgba(0,0,0,.06)
+}
+
+.h1,.h2,.h3,.h4,body,h1,h2,h3,h4,h5,h6 {
+  font-family: Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 300;
+  line-height: 1.5em
+}
+
+.h1,h1 {
+  font-size: 3.3125rem;
+  line-height: 1.15em
+}
+
+.h2,h2 {
+  font-size: 2.25rem
+}
+
+.h3,h3 {
+  font-size: 1.5625rem;
+  line-height: 1.4em;
+  margin: 20px 0 10px
+}
+
+.h4,h4 {
+  font-size: 1.125rem;
+  line-height: 1.4em;
+  font-weight: 300
+}
+
+h2.title {
+  margin-bottom: 2.142rem
+}
+
+.text-warning {
+  color: #000000!important
+}
+
+.card {
+  border: 0;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border-radius: 6px;
+  color: #333;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.14)
+}
+
+.card .card-header-info .card-icon,.card .card-header-info .card-text,.card .card-header-info:not(.card-header-icon):not(.card-header-text),.card.bg-info,.card.card-rotate.bg-info .back,.card.card-rotate.bg-info .front {
+  background: linear-gradient(60deg,#26c6da,#00acc1)
+}
+
+.card .card-header-warning .card-icon,.card .card-header-warning .card-text,.card .card-header-warning:not(.card-header-icon):not(.card-header-text),.card.bg-warning,.card.card-rotate.bg-warning .back,.card.card-rotate.bg-warning .front {
+  background: linear-gradient(60deg,#26c6da,#00acc1)
+}
+
+.card .card-header-danger .card-icon,.card .card-header-danger .card-text,.card .card-header-danger:not(.card-header-icon):not(.card-header-text),.card.bg-danger,.card.card-rotate.bg-danger .back,.card.card-rotate.bg-danger .front {
+  background: linear-gradient(60deg,#26c6da,#00acc1)
+}
+
+.card .card-header-danger .card-icon,.card .card-header-danger .card-text,.card .card-header-danger:not(.card-header-icon):not(.card-header-text) {
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,.14),0 7px 10px -5px rgba(0, 140, 255, 0.4)
+}
+
+.card .card-header-rose .card-icon,.card .card-header-rose .card-text,.card .card-header-rose:not(.card-header-icon):not(.card-header-text) {
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,.14),0 7px 10px -5px rgba(0, 140, 255, 0.4)
+}
+
+.card .card-header-warning .card-icon,.card .card-header-warning .card-text,.card .card-header-warning:not(.card-header-icon):not(.card-header-text) {
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,.14),0 7px 10px -5px rgba(0, 140, 255, 0.4)
+}
+
+.card [class*=card-header-],.card [class*=card-header-] .card-title,.card [class*=card-header-] .card-title a,.card [class*=card-header-] .icon i,.card[class*=bg-],.card[class*=bg-] .card-title,.card[class*=bg-] .card-title a,.card[class*=bg-] .icon i {
+  color: #fff
+}
+
+.card [class*=card-header-] .icon i,.card[class*=bg-] .icon i {
+  border-color: rgba(255,255,255,.25)
+}
+
+.card .card-title {
+  margin-top: 0;
+  margin-bottom: 15px
+}
+
+.card .card-body {
+  padding: .9375rem 20px;
+  position: relative
+}
+
+.card .card-header .card-title {
+  margin-bottom: 3px
+}
+
+.card .card-header .card-category {
+  margin: 0
+}
+
+.card .card-header.card-header-icon .card-title,.card .card-header.card-header-text .card-title {
+  margin-top: 15px;
+  color: #3c4858
+}
+
+.card.card-chart .card-category {
+  margin: 0
+}
+
+.card .card-body+.card-footer,.card .card-footer {
+  padding: 10px 0 0;
+  margin: 0 15px 10px;
+  border-radius: 0;
+  justify-content: space-between;
+  align-items: center
+}
+
+.card .card-body+.card-footer .stats,.card .card-footer .stats {
+  color: #999;
+  font-size: 12px;
+  line-height: 22px
+}
+
+.card [class*=card-header-] {
+  margin: 0 15px;
+  padding: 0;
+  position: relative
+}
+
+.card [class*=card-header-]:not(.card-header-icon):not(.card-header-text):not(.card-header-image) {
+  border-radius: 3px;
+  margin-top: -20px;
+  padding: 15px
+}
+
+.card [class*=card-header-] .card-icon,.card [class*=card-header-] .card-text {
+  border-radius: 3px;
+  background-color: #999;
+  padding: 15px;
+  margin-top: -20px;
+  margin-right: 15px;
+  float: left
+}
+
+.card [class*=card-header-] .ct-chart .ct-grid {
+  stroke: rgba(255,255,255,.2)
+}
+
+.card [class*=card-header-] .ct-chart .ct-series-a .ct-bar,.card [class*=card-header-] .ct-chart .ct-series-a .ct-line,.card [class*=card-header-] .ct-chart .ct-series-a .ct-point,.card [class*=card-header-] .ct-chart .ct-series-a .ct-slice-donut {
+  stroke: rgba(255,255,255,.8)
+}
+
+.card-stats .card-header .card-category:not([class*=text-]) {
+  color: #999;
+  font-size: 14px
+}
+
+.card-stats .card-header+.card-footer {
+  border-top: 1px solid #eee;
+  margin-top: 14px
+}
+
+.ct-chart .ct-bar {
+  fill: none;
+  stroke-width: 10px
+}
+
+.ct-chart .ct-line {
+  fill: none;
+  stroke-width: 4px
+}

@@ -1,0 +1,220 @@
+
+<aside class="font-primary sticky top-0 z-40 w-full">
+  <nav class="bg-white border-b-4 w-full border-sky-500 rounded-b-lg shadow-lg shadow-sky-200">
+    <div class="mx-auto max-w-7xl w-full px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 w-full items-center justify-between">
+        <div class="flex flex-0 ml-2 -mr-50 sm:items-stretch sm:justify-start sm:p-2 sm:pr-10">
+          <button type="button"
+            class="sm:block sm:relative sm:rounded-full sm:p-1 sm:text-sky-500 sm:hover:text-cyan-300 sm:hover:outline-none sm:hover:ring-2 sm:hover:ring-white sm:hover:ring-offset-2 sm:hover:ring-offset-sky-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex-1 w-full justify-center items-center sm:flex sm:justify-center gap-16 bg">
+          <div>
+            <a href="">Inicio</a>
+          </div>
+          <div>
+            <a href="">Servicios</a>
+          </div>
+          <div class="flex flex-shrink-0 items-center">
+            <img src="https://mibluemedical.com/wp-content/uploads/2021/02/cropped-Bluemedical-icon-2.png"
+              class="w-10 h-10" alt="">
+            <p class="text-3xl pl-2 text-sky-500">Salud360</p>
+          </div>
+          <div>
+            <a href="">Contactanos</a>
+          </div>
+          <div>
+            <a href="">Nosotros</a>
+          </div>
+        </div>
+        <div class="flex justify-end ">
+          <div class="">
+            <button type="submit" 
+              class="flex w-full text-black rounded-full bg-gradient-to-tr from-cyan-300 to-sky-600 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75">
+              <span class="block w-full rounded-full bg-white px-4 py-1 text-base font-medium hover:bg-transparent">
+                Agendar una Cita Medica
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+  <!-- sidebar -->
+  <div>
+    <div class="absolute flex h-screen antialiased text-gray-900 bg-white">
+      <div class="hidden fixed inset-y-0 z-50 w-80" id="sidebar">
+        <svg class="absolute inset-0 w-full h-full text-white"
+          style="filter: drop-shadow(10px 10px 10px #0084ffcf)" preserveAspectRatio="none"
+          viewBox="0 0 309 800" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M268.487 0H0V800H247.32C207.957 725 207.975 492.294 268.487 367.647C329 243 314.906 53.4314 268.487 0Z" />
+        </svg>
+        <div class="z-10 flex flex-col flex-1 w-full">
+          <div class="flex items-center justify-between flex-shrink-0 w-64 p-4">
+            <a href="#">
+              <div class="flex flex-shrink-0 items-center">
+                <img src="https://mibluemedical.com/wp-content/uploads/2021/02/cropped-Bluemedical-icon-2.png"
+                  class="w-10 h-10" alt="">
+                <p class="text-3xl pl-2 text-sky-600">Salud360</p>
+              </div>
+            </a>
+            <button class="p-1 hover:text-white hover:bg-sky-500 rounded-full focus:outline-none focus:ring" (click)="closeSidebar()">
+              <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <nav class="flex flex-col flex-1 w-64 p-4 mt-4">
+            <a href="#" class="flex items-center space-x-2 hover:bg-sky-500 hover:text-white py-2 px-4 rounded-3xl">
+              <i class="fa fa-home"></i>
+              <span>Inicio</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2 hover:bg-sky-500 hover:text-white py-2 px-4 rounded-3xl">
+              <i class="fa fa-book-medical" aria-hidden="true"></i>
+              <span>Lista de Pacientes</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2 hover:bg-sky-500 hover:text-white py-2 px-4 rounded-3xl">
+              <i class="fa fa-address-book" aria-hidden="true"></i>
+              <span>Registro de Examenes Básicos</span>
+            </a>
+          </nav>
+          <div class="flex-shrink-0 p-4">
+            <button class="flex items-center space-x-2 hover:bg-sky-500 hover:text-white py-2 px-4 rounded-3xl">
+              <i class="fa fa-power-off"></i>
+              <span>Cerrar Sesión</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- notifications -->
+  <div class="flex justify-end mr-28">
+  <div id="dropdownNotification"
+    class="hidden absolute z-20 w-full max-w-sm bg-white divide-y divide-sky-500 rounded-lg shadow-2xl shadow-sky-300">
+    <div
+        class="block px-4 py-2 font-medium text-center text-white rounded-t-lg bg-sky-500 ">
+        Notificaciones
+    </div>
+    <div class="divide-y divide-sky-500">
+        <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
+            <div class="flex-shrink-0">
+                <img class="rounded-full w-11 h-11" src="https://th.bing.com/th/id/OIP.AWX4OdiKNkWcQw80HEUh7gHaHa?rs=1&pid=ImgDetMain" alt="Jese image">
+                <div
+                    class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-blue-600 border border-white rounded-full">
+                    <svg class="w-2 h-2 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" viewBox="0 0 18 18">
+                        <path
+                            d="M1 18h16a1 1 0 0 0 1-1v-6h-4.439a.99.99 0 0 0-.908.6 3.978 3.978 0 0 1-7.306 0 .99.99 0 0 0-.908-.6H0v6a1 1 0 0 0 1 1Z" />
+                        <path
+                            d="M4.439 9a2.99 2.99 0 0 1 2.742 1.8 1.977 1.977 0 0 0 3.638 0A2.99 2.99 0 0 1 13.561 9H17.8L15.977.783A1 1 0 0 0 15 0H3a1 1 0 0 0-.977.783L.2 9h4.239Z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="w-full ps-3">
+                <div class="text-gray-500 text-sm mb-1.5">New message from <span
+                        class="font-semibold text-gray-900">Lionel Messi</span>: "Hey, what's up? All set
+                    for the presentation?"</div>
+                <div class="text-xs text-blue-600">a few moments ago</div>
+            </div>
+        </a>
+        <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
+            <div class="flex-shrink-0">
+                <img class="rounded-full w-11 h-11" src="https://th.bing.com/th/id/R.4871a2ed00640fe233fc86f3508a468c?rik=lEvaeIpOs6w8yQ&riu=http%3a%2f%2flavozdelmuro.net%2fwp-content%2fuploads%2f2015%2f06%2fpersonas_con_talento_10.jpg&ehk=bwFuv4ADoJr7C%2fUjr5YccBxrkkQuSnWhqqXU8O%2fb2so%3d&risl=&pid=ImgRaw&r=0" alt="Joseph image">
+                <div
+                    class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-gray-900 border border-white rounded-full">
+                    <svg class="w-2 h-2 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" viewBox="0 0 20 18">
+                        <path
+                            d="M6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Zm11-3h-2V5a1 1 0 0 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 0 0 2 0V9h2a1 1 0 1 0 0-2Z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="w-full ps-3">
+                <div class="text-gray-500 text-sm mb-1.5"><span
+                        class="font-semibold text-gray-900">Joseph Mcfall</span> and <span
+                        class="font-medium text-gray-900">5 others</span> started following you.</div>
+                <div class="text-xs text-blue-600">10 minutes ago</div>
+            </div>
+        </a>
+        <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
+            <div class="flex-shrink-0">
+                <img class="rounded-full w-11 h-11" src="https://1.bp.blogspot.com/-1yIlocuhN9A/VjTUiIn8O-I/AAAAAAAABz8/d3MDeazcTDs/s1600/11080824_351430138388726_2374566367614438083_o.jpg" alt="Bonnie image">
+                <div
+                    class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-red-600 border border-white rounded-full">
+                    <svg class="w-2 h-2 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" viewBox="0 0 20 18">
+                        <path
+                            d="M17.947 2.053a5.209 5.209 0 0 0-3.793-1.53A6.414 6.414 0 0 0 10 2.311 6.482 6.482 0 0 0 5.824.5a5.2 5.2 0 0 0-3.8 1.521c-1.915 1.916-2.315 5.392.625 8.333l7 7a.5.5 0 0 0 .708 0l7-7a6.6 6.6 0 0 0 2.123-4.508 5.179 5.179 0 0 0-1.533-3.793Z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="w-full ps-3">
+                <div class="text-gray-500 text-sm mb-1.5"><span
+                        class="font-semibold text-gray-900">Bonnie Green</span> and <span
+                        class="font-medium text-gray-900">141 others</span> love your story. See it and
+                    view more stories.</div>
+                <div class="text-xs text-blue-600">44 minutes ago</div>
+            </div>
+        </a>
+        <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
+            <div class="flex-shrink-0">
+                <img class="rounded-full w-11 h-11" src="https://2.bp.blogspot.com/-itYtAL5lBeE/TkFdlIhhacI/AAAAAAAABHI/HYGHzdl85UI/s1600/111433_aerogenerador.jpg" alt="Leslie image">
+                <div
+                    class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-green-400 border border-white rounded-full">
+                    <svg class="w-2 h-2 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" viewBox="0 0 20 18">
+                        <path
+                            d="M18 0H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h2v4a1 1 0 0 0 1.707.707L10.414 13H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5 4h2a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2ZM5 4h5a1 1 0 1 1 0 2H5a1 1 0 0 1 0-2Zm2 5H5a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2Zm9 0h-6a1 1 0 0 1 0-2h6a1 1 0 1 1 0 2Z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="w-full ps-3">
+                <div class="text-gray-500 text-sm mb-1.5"><span
+                        class="font-semibold text-gray-900">Leslie Livingston</span> mentioned you in a
+                    comment: <span class="font-medium text-blue-500" href="#">@bonnie.green</span> what do you say?
+                </div>
+                <div class="text-xs text-blue-600">1 hour ago</div>
+            </div>
+        </a>
+        <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
+            <div class="flex-shrink-0">
+                <img class="rounded-full w-11 h-11" src="https://th.bing.com/th/id/OIP.6WkL88k8-t5B6m-Kb9juzgHaEK?w=576&h=324&rs=1&pid=ImgDetMain" alt="Robert image">
+                <div
+                    class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-purple-500 border border-white rounded-full">
+                    <svg class="w-2 h-2 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" viewBox="0 0 20 14">
+                        <path
+                            d="M11 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm8.585 1.189a.994.994 0 0 0-.9-.138l-2.965.983a1 1 0 0 0-.685.949v8a1 1 0 0 0 .675.946l2.965 1.02a1.013 1.013 0 0 0 1.032-.242A1 1 0 0 0 20 12V2a1 1 0 0 0-.415-.811Z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="w-full ps-3">
+                <div class="text-gray-500 text-sm mb-1.5"><span
+                        class="font-semibold text-gray-900">Robert Brown</span> posted a new video:
+                    Glassmorphism - learn how to implement the new design trend.</div>
+                <div class="text-xs text-blue-600">3 hours ago</div>
+            </div>
+        </a>
+    </div>
+    <a href="#"
+        class="block py-2 text-sm font-medium text-center text-sky-500 rounded-b-lg bg-white hover:bg-sky-500 hover:text-white">
+        <div class="inline-flex items-center ">
+            <svg class="w-4 h-4 me-2" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
+                <path
+                    d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+            </svg>
+            View all
+        </div>
+    </a>
+</div>
+</div>
+</aside>

@@ -1,0 +1,100 @@
+<div class="bg-cover bg-no-repeat h-screen">
+  <div>
+    <div class="bg-gray-100 h-screen font-primary">
+      <app-header></app-header>
+      <main class="mt-5">
+        <div>
+          <div id="carousel-container">
+            <div id="carousel">
+              <div class="slide"> <img
+                  src="https://www.praktischarzt.de/wp-content/uploads/2023/03/Becoming-a-medical-doctor-or-physician-in-Germany.jpg"
+                  class="w-full h-92"></div>
+              <div class="slide"><img
+                  src="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/in/wp-content/uploads/2023/04/pexels-rodnae-productions-6129507-scaled.jpg"
+                  alt="Slide 2" class="w-full h-92"></div>
+              <div class="slide"><img
+                  src="https://www.brightsidemedical.com.au/wp-content/uploads/2019/03/happy-doctors.jpg"
+                  class="w-full h-92"></div>
+              <div class="slide"> <img
+                  src="https://www.clinicaladvisor.com/wp-content/uploads/sites/11/2022/12/nurses_G_1204177269-860x573.jpg"
+                  class="w-full h-92"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center bg-gradient-to-b from-sky-100 py-20 flex flex-row px-20">
+          <div class="basis-1/2 rounded-xl"><img
+              src="https://static6.depositphotos.com/1005895/629/i/450/depositphotos_6297956-stock-photo-a-stethoscope-on-the-calendar.jpg"
+              alt=""></div>
+          <div class="basis-1/2 ml-6 mt-8">
+            <h1 class="text-darken text-2xl font-bold">Agendamiento de citas medicas</h1>
+            <button type="submit" [routerLink]="['/appointment-home']"
+              class="hover:transition hover:duration-700 ease-in-out mt-10 text-black rounded-full  bg-gradient-to-tr from-cyan-300 to-sky-600 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75 ">
+              <span class="block rounded-full bg-white py-2 px-5 text-base font-medium hover:bg-transparent">
+                <i class="fa fa-calendar mr-2" aria-hidden="true"></i> Agendar Ahora
+              </span>
+            </button>
+            <p class="mt-10 text-gray-600">Múltiples especialidades a tu servicio. Consulta externa, hospitalización,
+              cuidados intensivos neonatal, pediátrico y adultos, apoyo diagnóstico de imagen y laboratorio.</p>
+          </div>
+        </div>
+        <div data-aos="zoom-in-up" class="my-14 flex flex-col lg:flex-row lg:space-x-20">
+          <div class="lg:w-6/12">
+            <img class="w-full mb-6" src="img/laptop-news.png">
+            <span class="bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full">NUEVO</span>
+            <h1 class="text-gray-800 font-semibold my-3 text-xl">Con mas de 20 operaciones al dia con los mejores.
+            </h1>
+            <p class="text-gray-500 mb-3">Con un gran grupo de especialistas en la cirujia para ti.</p>
+          </div>
+          <div class="lg:w-7/12 flex flex-col justify-between mt-12 space-y-5 lg:space-y-0 lg:mt-0">
+            <div class="flex space-x-5">
+              <div class="w-4/12">
+                <div class="relative">
+                  <img class="rounded-xl w-full" src="img/children-laptop.png">
+                  <span
+                    class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NUEVO</span>
+                </div>
+              </div>
+              <div class="w-8/12">
+                <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Cirujia ambulatoria</h1>
+                <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Con los mejores cirujanos de la cuidad
+                </p>
+              </div>
+            </div>
+            <div class="flex space-x-5">
+              <div class="w-4/12">
+                <div class="relative">
+                  <img class="rounded-xl w-full" src="img/girl-laptop.png">
+                  <span
+                    class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NUEVO</span>
+                </div>
+              </div>
+              <div class="w-8/12">
+                <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Laboratorios</h1>
+                <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Con la mejor calidad en los
+                  Laboratorios
+                  para tu revicion.
+                </p>
+              </div>
+            </div>
+            <div class="flex space-x-5">
+              <div class="w-4/12">
+                <div class="relative">
+                  <img class="rounded-xl w-full" src="img/cat-laptop.png">
+                  <span
+                    class="absolute bottom-2 right-2 bg-yellow-300 text-darken font-semibold px-4 py-px text-sm rounded-full hidden sm:block">NUEVO</span>
+                </div>
+              </div>
+              <div class="w-8/12">
+                <h1 class="text-gray-800 text-sm sm:text-lg font-semibold">Centro de imagen</h1>
+                <p class="text-gray-500 my-2 sm:my-4 text-xs sm:text-md">Con las mejores maquinas en calidad.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <app-footer></app-footer>
+      </main>
+    </div>
+  </div>
+</div>
