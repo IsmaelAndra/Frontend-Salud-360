@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError, catchError, BehaviorSubject, tap, map } from 'rxjs';
 import { LoginRequest } from '../request/loginRequest';
-import { UserModel } from '../../user/entities/user.entity';
+import { CreateUserDto, UserModel } from '../../user/entities/user.entity';
+import { AuthModel } from '../entities/auth.entity';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  readonly apiUrl = 'http://localhost:8093/auth/login';
+  readonly apiUrl: string = 'http://localhost:8093/auth/login';
 
   currentUserLoginOn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   currentUserData: BehaviorSubject<String> = new BehaviorSubject<String>("");
@@ -58,4 +59,16 @@ export class AuthService {
     return this.currentUserData.value;
   }
 
+  // constructor(private httpClient: HttpClient) {}
+
+  // login(dto: AuthModel):Observable<any>{
+  //   return this.httpClient.post<any>(this.apiUrl + 'login',dto);
+  // }
+
+  readonly apiUrlR: string = 'http://localhost:8093/auth/register';
+
+  store(user: UserModel):Observable<UserModel> {
+    const url = `${this.apiUrlR}`;
+    return this.http.post<UserModel>(url, user)
+  }
 }

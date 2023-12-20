@@ -29,7 +29,7 @@ export class UserService {
 
   update(User: UpdateUserDto): Observable<UserModel> {
     const url = `${this.apiUrl}/${User.id_user}/`;
-    return this.httpClient.patch<UserModel>(url, User)
+    return this.httpClient.put<UserModel>(url, User)
   }
 
   destroy(id_user: UserModel['id_user']): Observable<any> {

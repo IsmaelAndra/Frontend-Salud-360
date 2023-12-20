@@ -5,15 +5,15 @@ import { Observable, catchError, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ErrorInterceptorService implements HttpInterceptor {
+export class ErrorInterceptorService implements HttpInterceptor{
 
   constructor() { }
   
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError(error => {
-        console.log(error);
-        return throwError(() => error);
+        console.error(error);
+        return throwError(()=>error);
       })
     )
   }

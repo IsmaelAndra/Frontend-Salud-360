@@ -34,12 +34,7 @@ export class AdminDoctorListComponent implements OnInit {
       phone_user: 0,
       email_user: '',
       password: '',
-      pass_verification_user: '',
-      rol: {
-        id_rol: 0,
-        namerol: '',
-        description_rol: ''
-      }
+      pass_verification_user: ''
     }
   }
 

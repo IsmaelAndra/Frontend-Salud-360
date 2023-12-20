@@ -19,7 +19,7 @@
             class="w-14 h-12" alt="">
           <p class="text-5xl pl-2 text-sky-500">Salud360</p>
         </div>
-        <form class="sm:w-3/3 w-full px-36 lg:px-0 mx-auto" [formGroup]="registerForm" [formGroup]="registerForm">
+        <form class="sm:w-3/3 w-full px-36 lg:px-0 mx-auto" action="#" method="POST" [formGroup]="nuevoUser" (ngSubmit)="submit(nuevoUser.value)">
           <div class="grid md:grid-cols-2 md:gap-6">
 
             <div class="relative z-0 w-full mb-8 group">
@@ -29,11 +29,11 @@
               <label
                 class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre</label>
 
-              <div *ngIf="registerForm.get('name_user')?.hasError('required') && registerForm.get('name_user')?.touched"
+              <div *ngIf="nuevoUser.get('name_user')?.hasError('required') && nuevoUser.get('name_user')?.touched"
                 class="absolute flex justify-end text-sm text-rose-600">
                 El campo es obligatorio
               </div>
-              <div *ngIf="registerForm.get('name_user')?.hasError('pattern') && registerForm.get('name_user')?.touched"
+              <div *ngIf="nuevoUser.get('name_user')?.hasError('pattern') && nuevoUser.get('name_user')?.touched"
                 class="absolute flex justify-end text-sm text-rose-600">
                 ¡El nombre solo acepta letras sin espacios!
               </div>
@@ -46,12 +46,12 @@
               <label
                 class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Apellido</label>
               <div
-                *ngIf="registerForm.get('lastname_user')?.hasError('required') && registerForm.get('lastname_user')?.touched"
+                *ngIf="nuevoUser.get('lastname_user')?.hasError('required') && nuevoUser.get('lastname_user')?.touched"
                 class="absolute flex justify-end text-sm text-rose-600">
                 El campo es obligatorio
               </div>
               <div
-                *ngIf="registerForm.get('lastname_user')?.hasError('pattern') && registerForm.get('lastname_user')?.touched"
+                *ngIf="nuevoUser.get('lastname_user')?.hasError('pattern') && nuevoUser.get('lastname_user')?.touched"
                 class="absolute flex justify-end text-sm text-rose-600">
                 ¡El apellido solo acepta letras sin espacios!
               </div>
@@ -67,7 +67,7 @@
               <label
                 class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Dirección</label>
               <div
-                *ngIf="registerForm.get('address_user')?.hasError('required') && registerForm.get('address_user')?.touched"
+                *ngIf="nuevoUser.get('address_user')?.hasError('required') && nuevoUser.get('address_user')?.touched"
                 class="absolute flex justify-end text-sm text-rose-600">
                 El campo es obligatorio
               </div>
@@ -80,12 +80,12 @@
               <label
                 class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Número</label>
               <div
-                *ngIf="registerForm.get('phone_user')?.hasError('required') && registerForm.get('phone_user')?.touched"
+                *ngIf="nuevoUser.get('phone_user')?.hasError('required') && nuevoUser.get('phone_user')?.touched"
                 class="absolute flex justify-end text-sm text-rose-600">
                 El campo es obligatorio
               </div>
               <div
-                *ngIf="registerForm.get('phone_user')?.hasError('pattern') && registerForm.get('phone_user')?.touched"
+                *ngIf="nuevoUser.get('phone_user')?.hasError('pattern') && nuevoUser.get('phone_user')?.touched"
                 class="absolute flex justify-end text-sm text-rose-600">
                 Ingrese un numero telefonico valido
               </div>
@@ -110,20 +110,20 @@
                 <option value="otro">Prefiero No Decirlo</option>
               </select>
               <div
-                *ngIf="registerForm.get('gender_user')?.hasError('required') && registerForm.get('gender_user')?.touched"
+                *ngIf="nuevoUser.get('gender_user')?.hasError('required') && nuevoUser.get('gender_user')?.touched"
                 class="absolute flex justify-end text-sm text-rose-600">
                 Por favor, selecciona un género
               </div>
             </div>
             <div class="relative z-0 w-full mb-6 group">
-              <input type="date" formControlName="date_of_birth_user"
+              <input type="date" formControlName="dateofbirth_user"
                 class="block py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-sky-500 appearance-none  focus:outline-none focus:ring-0 peer"
                 placeholder=" " required />
               <label
                 class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Fecha
                 de Nacimiento</label>
               <div
-                *ngIf="registerForm.get('date_of_birth_user')?.hasError('menorDeEdad') && registerForm.get('date_of_birth_user')?.touched"
+                *ngIf="nuevoUser.get('dateofbirth_user')?.hasError('menorDeEdad') && nuevoUser.get('dateofbirth_user')?.touched"
                 class="absolute flex justify-end text-sm text-rose-600">
                 Debes ser mayor de 18 años
               </div>
@@ -131,33 +131,33 @@
           </div>
           <div class="grid md:grid-cols-2 md:gap-6">
           <div class="relative z-0 w-full mb-8 group ">
-            <input type="mail" formControlName="mail_user"
+            <input type="mail" formControlName="email_user"
               class="block peer py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-cyan-300 appearance-none  focus:outline-none focus:ring-0 peer"
               placeholder=" " required />
             <label
               class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Correo
               Electronico</label>
-            <div *ngIf="registerForm.get('mail_user')?.getError('email') && registerForm.get('mail_user')?.touched"
+            <div *ngIf="nuevoUser.get('mail_user')?.getError('email') && nuevoUser.get('mail_user')?.touched"
               class="absolute flex justify-end text-sm text-rose-600">
               Ingresa una dirección de correo electrónico válida
             </div>
-            <div *ngIf="registerForm.get('mail_user')?.getError('required') && registerForm.get('mail_user')?.touched"
+            <div *ngIf="nuevoUser.get('mail_user')?.getError('required') && nuevoUser.get('mail_user')?.touched"
               class="absolute flex justify-end text-sm text-rose-600">
               El correo electronico es obligatorio
             </div>
           </div>
           <div class="relative z-0 w-full mb-8 group">
-            <input type="text" id="name" id="name" formControlName="name_user"
+            <input type="text" id="name" id="name" formControlName="username"
               class="block py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-sky-500 appearance-none focus:outline-none focus:ring-0 peer"
               placeholder=" " required />
             <label
               class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre de Usuario</label>
 
-            <div *ngIf="registerForm.get('name_user')?.hasError('required') && registerForm.get('name_user')?.touched"
+            <div *ngIf="nuevoUser.get('username')?.hasError('required') && nuevoUser.get('username')?.touched"
               class="absolute flex justify-end text-sm text-rose-600">
               El campo es obligatorio
             </div>
-            <div *ngIf="registerForm.get('name_user')?.hasError('pattern') && registerForm.get('name_user')?.touched"
+            <div *ngIf="nuevoUser.get('username')?.hasError('pattern') && nuevoUser.get('username')?.touched"
               class="absolute flex justify-end text-sm text-rose-600">
               ¡El nombre solo acepta letras sin espacios!
             </div>
@@ -165,20 +165,20 @@
         </div>
           <div class="grid md:grid-cols-2 md:gap-6">
             <div class="relative z-0 w-full mb-2 group">
-              <input type="password" formControlName="password_user"
+              <input type="password" formControlName="password"
                 class="block py-2.5 px-2.5 rounded-xl w-full text-sm text-black bg-transparent border-0 border-b-2 border-sky-500 appearance-none  focus:outline-none focus:ring-0 peer"
                 placeholder=" " required />
               <label
                 class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Contraseña</label>
               <div
-                *ngIf="registerForm.get('password_user')?.hasError('pattern') && registerForm.get('password_user')?.touched"
+                *ngIf="nuevoUser.get('password')?.hasError('pattern') && nuevoUser.get('password')?.touched"
                 class="flex justify-end text-xs text-rose-600">
                 - Al menos 8 caracteres de longitud<br>
                 - Al menos 1 letra mayúscula <br>
                 - Al menos 1 número <br>
               </div>
               <div
-                *ngIf="registerForm.get('password_user')?.hasError('required') && registerForm.get('password_user')?.touched"
+                *ngIf="nuevoUser.get('password')?.hasError('required') && nuevoUser.get('password')?.touched"
                 class="absolute flex justify-end text-sm text-rose-600">
                 Campo Requerido
               </div>
@@ -192,7 +192,7 @@
                 class="peer-focus:font-medium px-2.5 left-0 absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Repetir
                 Contraseña</label>
               <div
-                *ngIf="registerForm.hasError('notSame') && (registerForm.get('password_user')?.touched || registerForm.get('password_validation_user')?.touched)"
+                *ngIf="nuevoUser.hasError('notSame') && (nuevoUser.get('password_user')?.touched || nuevoUser.get('password_validation_user')?.touched)"
                 class="absolute flex justify-end text-sm text-rose-600">
                 Las contraseñas no coinciden
               </div>
@@ -209,7 +209,7 @@
               </label>
             </div>
             <div>
-              <button (click)="register()"
+              <button type="submit"
                 class="flex w-full rounded-full bg-gradient-to-tr from-cyan-300 to-sky-600 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75">
                 <span
                   class="block w-full rounded-full bg-white text-black px-8 py-2 text-base font-medium hover:bg-transparent hover:text-white">

@@ -93,12 +93,7 @@ export class AppointmentHomeComponent implements OnInit {
         phone_user: 0,
         email_user: '',
         password: '',
-        pass_verification_user: '',
-        rol: {
-          id_rol: 0,
-          namerol: '',
-          description_rol: ''
-        }
+        pass_verification_user: ''
       }
     },
     doctor: {
@@ -122,12 +117,7 @@ export class AppointmentHomeComponent implements OnInit {
         phone_user: 0,
         email_user: '',
         password: '',
-        pass_verification_user: '',
-        rol: {
-          id_rol: 0,
-          namerol: '',
-          description_rol: ''
-        }
+        pass_verification_user: ''
       }
     }
   }
@@ -149,7 +139,7 @@ export class AppointmentHomeComponent implements OnInit {
     fechaHaceUnMes.setMonth(fechaHaceUnMes.getMonth() + 1);
 
     return fechaSeleccionada > new Date() && fechaSeleccionada <= fechaHaceUnMes ? null : { fechaInvalida: true };
-  }
+  };
 
   submit(data: any) {
     if (this.appointments) {

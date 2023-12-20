@@ -10,8 +10,9 @@ import { AppointmentModule } from './modules/appointment/appointment.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { JwtInterceptorService } from './modules/auth/services/jwt-interceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorInterceptorService } from './modules/auth/services/error-interceptor.service';
+import { JwtInterceptorService } from './modules/auth/services/jwt-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -27,11 +28,12 @@ import { ErrorInterceptorService } from './modules/auth/services/error-intercept
     AdminModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi:true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi:true}
+    {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptorService,multi:true},
+    {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptorService,multi:true}
   ],
   bootstrap: [AppComponent]
 })

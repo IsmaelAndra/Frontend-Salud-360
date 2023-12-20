@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CreateUserDto, UserModel } from '../../user/entities/user.entity';
+import { UserService } from '../../user/services/user.service';
+import { AuthService } from '../services/auth.service';
+import { TokenService } from '../services/token.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -23,24 +28,23 @@ export class RegisterComponent implements OnInit {
     this.modal = false;
   }
 
-
-  //  INICIO DE VALIDACIONES LOGIN
-  registerForm: FormGroup;
-
-  constructor(private formBuilder: FormBuilder, private router: Router) {
-    this.registerForm = this.formBuilder.group({
-      name_user: ['', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]],
-      lastname_user: ['', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/)]],
-      address_user: ['', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/)]],
-      phone_user: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
-      gender_user: ['', Validators.required],
-      date_of_birth_user: ['', [Validators.required, this.dateofbirth_userValidator]],
-      mail_user: ['', [Validators.required, Validators.email]],
-      password_user: ['', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[A-Z])(?=.*\d).*$/)]],
-      password_validation_user: ['', [Validators.required]],
-    }, { validator: this.checkPasswords });
-
+  users: UserModel = {
+    id_user: 0,
+    photo_user: 'https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg',
+    name_user: '',
+    username: '',
+    lastname_user: '',
+    dateofbirth_user: new Date(),
+    gender_user: '',
+    address_user: '',
+    phone_user: 0,
+    email_user: '',
+    password: '',
+    pass_verification_user: ''
   }
+  //  INICIO DE VALIDACIONES LOGIN
+
+  constructor(private router: Router,private authService: AuthService) {}
 
   dateofbirth_userValidator(control: AbstractControl): { [key: string]: boolean } | null {
     const date_of_birth_user = new Date(control.value);
@@ -63,26 +67,41 @@ export class RegisterComponent implements OnInit {
   }
 
   nuevoUser = new FormGroup({
-    name_user: new FormControl('',),
-    lastname_user: new FormControl(''),
-    mail_user: new FormControl(''),
-    address_user: new FormControl(''),
-    phone_user: new FormControl(''),
-    date_of_birth_user: new FormControl(new Date()),
-    password_user: new FormControl(''),
-    password_validation_user: new FormControl(''),
-    status_user: new FormControl(false)
+    photo_user: new FormControl('https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg', [Validators.required]),
+    name_user: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]),
+    username: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]),
+    lastname_user: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/)]),
+    dateofbirth_user: new FormControl(new Date(), [Validators.required, this.dateofbirth_userValidator]),
+    gender_user: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]),
+    address_user: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/)]),
+    phone_user: new FormControl('', [Validators.required, Validators.pattern(/^\d{9}$/)]),
+    email_user: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern(/^(?=.*[A-Z])(?=.*\d).*$/)]),
+    password_validation_user: new FormControl('', [Validators.required])
   },);
 
   formCheck() {
-    if (this.registerForm.valid) {
-      console.log('Formulario válido, datos:', this.registerForm.value);
+    if (this.nuevoUser.valid) {
+      console.log('Formulario válido, datos:', this.nuevoUser.value);
     } else {
       alert('Por favor, completa el formulario correctamente antes de enviarlo.');
     }
   }
 
-  register() {
-    this.router.navigate(['/login']);
+  submit(data: any) {
+    if (this.users) {
+      data.id_user = this.users.id_user;
+    }
+    this.authService.store(data).subscribe((result) => {
+      if (result) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Registrado con Exito',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    })
+    console.log(data);
   }
 }
